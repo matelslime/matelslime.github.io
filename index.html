@@ -32,7 +32,9 @@
         }
 
         .bg {
-            background: url("Photo/bg.png") center/cover no-repeat;
+            background: url("Photo/bg.png") no-repeat center;
+            background-attachment: fixed;
+            background-size: cover;
         }
 
         .disappear {
@@ -294,10 +296,6 @@
         }
 
         @media screen and (max-width:1299px) and (min-width:768px) {
-            /* #page1 .row {
-                margin: -0.2rem;
-            } */
-
             .Icon {
                 font-size: 3.25rem;
             }
