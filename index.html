@@ -556,10 +556,10 @@
                         list2 = getKeywordSearchData(data.Show, val);
                         if (key != val.substr(0, 1)) {
                             tagList += tagList != "" ? `</div></div></div>` : "";
-                            tagList += `<div class="btn-group m-1"><button class="btn btn-success btn-sm rounded-pill shadow-none dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${data.Title}</button><div class="dropdown-menu border-0 bg-transparent"><div class="dropdown-item btn-group bg-transparent" role="group" style="margin-left:-6%;"><a href="index-copy2.html?ID=${list2.ID}"" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`;
+                            tagList += `<div class="btn-group m-1"><button class="btn btn-success btn-sm rounded-pill shadow-none dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${data.Title}</button><div class="dropdown-menu border-0 bg-transparent"><div class="dropdown-item btn-group bg-transparent" role="group" style="margin-left:-6%;"><a href="index.html?ID=${list2.ID}"" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`;
                             key = val.substr(0, 1);
                         }
-                        else { tagList += `<a href="index-copy2.html?ID=${list2.ID}" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`; }
+                        else { tagList += `<a href="index.html?ID=${list2.ID}" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`; }
                     });
                     document.getElementById("tagList").innerHTML = tagList;
                 }
