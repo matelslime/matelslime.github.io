@@ -13,6 +13,16 @@
             list-style: none;
         }
 
+        .main-page {
+            width: 100%;
+            background: none;
+        }
+
+        .main-page2 {
+            margin-left: 17%;
+            width: 83%;
+        }
+
         #page1 {
             overflow: hidden;
         }
@@ -130,7 +140,7 @@
 
         #profile,
         #commentsSection {
-            height: 27rem;
+            height: 27.5rem;
             overflow-y: overlay;
         }
 
@@ -195,6 +205,10 @@
             color: #146941;
         }
 
+        .navbar {
+            padding-bottom: 0rem;
+        }
+
         .accordion {
             overflow-y: overlay;
         }
@@ -242,16 +256,7 @@
 
         .offcanvas-left {
             background-color: #96ccce;
-            width: 20%;
-        }
-
-        .offcanvas-page {
-            width: 100%;
-            background: none;
-        }
-
-        .offcanvas-page-page2 {
-            width: 80%;
+            width: 17%;
         }
 
         .offcanvas-header .btn-close {
@@ -312,7 +317,6 @@
 
 <body class="bg">
     <input type="hidden" id="accordionBodyId" value="">
-
     <div id="map" class="text-center mt-5 disappear"></div>
     <div id="aside" class="offcanvas offcanvas-start offcanvas-left h-100 visible disappear">
         <div class="offcanvas-header mb-2">
@@ -323,7 +327,7 @@
         </div>
         <div id="sideNav" class="accordion accordion-flush"></div>
     </div>
-    <div class="offcanvas offcanvas-end offcanvas-page h-100 visible">
+    <div class="main-page h-100">
         <div id="navLinks" class="bg-light bg-opacity-75 mb-2 mb-xl-4">
             <nav class="container navbar navbar-light nav-fill ps-1 pe-1">
                 <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">植物</p>
@@ -476,8 +480,8 @@
     <script src="bootstrap-5.1.1-dist/js/popper.min.js"></script>
     <script src="bootstrap-5.1.1-dist/js/bootstrap.js"></script>
     <script src="Scripts/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="data.json"></script>
-    <script type="text/javascript" src="comment.json"></script>
+    <script type="text/javascript" src="Data/data.json"></script>
+    <script type="text/javascript" src="Data/comment.json"></script>
     <script>
          const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
         const Data = JSON.parse(JSON.stringify(jsonData));
@@ -616,7 +620,7 @@
                 }
 
                 const ntimeStr = "剛剛";
-                if (boardElm.firstChild.innerText == ntimeStr) {
+                if ((boardElm.firstChild!=null) && (boardElm.firstChild.innerText == ntimeStr)) {
                     boardElm.removeChild(document.getElementsByClassName("T")[0]);
                 }
                 $(boardElm).prepend(`<div class="T">${ntimeStr}</div><div class="w-97"><div class="alert alert-light alert-dismissible fade show ms-3 " role="alert"><button type="button" class="btn-close Delete" data-bs-dismiss="alert" aria-label="Close"></button><div class="h5">${htmlEncode(nameElm.value)}&nbsp;&nbsp;&nbsp;&nbsp;${htmlEncode(districtElm.options[districtElm.selectedIndex].innerText)}</div><div class="w-100">${htmlEncode(detailElm.value)}</div></div></div>`);
@@ -757,7 +761,7 @@
         function openMapScene() {
             $("body").addClass("bg");
             $("#page1, #page2, .offcanvas-left").addClass("disappear");  
-            $(".offcanvas-page").removeClass("offcanvas-page-page2");        
+            $(".main-page").removeClass("main-page2");        
             $(document.getElementById("map")).removeClass("disappear");
             $(document.getElementById("toHome")).removeClass("disappear");
         }
@@ -775,7 +779,7 @@
             }
             // 主要頁面切換          
             $("#page1, #page2, .offcanvas-left").toggleClass("disappear");
-            $(".offcanvas-page").toggleClass("offcanvas-page-page2");
+            $(".main-page").toggleClass("main-page2");
             $("body").toggleClass("bg");
             // 以下為留言相關
             $("#title, #profile, #commentsSection, #tagList").empty();
