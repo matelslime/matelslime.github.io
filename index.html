@@ -566,6 +566,9 @@
                 $(document.getElementById("showMore")).on("click", ($event) => {
                     $(document.getElementById("moreDetail")).toggleClass("disappear");
                 })
+                $(document.getElementById("toTop")).on("click", ($event) => {
+                    $(profileElm).scrollTop(0);
+                })                
             }
 
             setCommentsSection(id) {
