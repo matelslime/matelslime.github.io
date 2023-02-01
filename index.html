@@ -168,17 +168,19 @@
         .report>span:hover {
             color: #ff6a00;
         }
-
+       
         #tagList .btn {
             background-color: #73b4b4;
             border-color: #7ab4b4;
         }
 
+        #profile .btn,
         #tagList .btn:hover {
             background-color: #5e9b9b;
             border-color: #669b9b;
         }
 
+        #profile .btn:hover,
         #tagList .btn:active {
             background-color: #508787;
             border-color: #588787;
@@ -191,6 +193,10 @@
 
         #commentDetail {
             height: 5rem;
+        }
+
+        #map {
+            margin-top: -3rem;
         }
 
         .nav-link {
@@ -286,7 +292,7 @@
         }
 
         @media screen and (min-width:1300px) {
-             .Icon {
+            .Icon {
                 font-size: 3.5rem;
             }
         }
@@ -306,8 +312,7 @@
 </head>
 
 <body class="bg">
-    <input type="hidden" id="accordionBodyId" value="">
-    <div id="map" class="text-center mt-5 disappear"></div>
+    <input type="hidden" id="accordionBodyId" value="">   
     <div id="aside" class="offcanvas offcanvas-start offcanvas-left h-100 visible disappear">
         <div class="offcanvas-header mb-2">
             <h5 class="offcanvas-title">
@@ -467,6 +472,7 @@
             </div>
         </div>
     </div>
+    <div id="map" class="text-center disappear"></div>
     <script src="bootstrap-5.1.1-dist/js/popper.min.js"></script>
     <script src="bootstrap-5.1.1-dist/js/bootstrap.js"></script>
     <script src="Scripts/jquery-3.5.1.js"></script>
