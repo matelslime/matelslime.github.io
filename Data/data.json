@@ -815,7 +815,7 @@ var jsonData = {
   "Animal": [
     {
       "ID": "A0001",
-      "Name": "semaning日本禿頭鯊魚苗",
+      "Name": "日本禿頭鯊魚苗",
       "Category": "AC01",
       "Detail": "",
       "Tag": []
@@ -843,7 +843,7 @@ var jsonData = {
     },
     {
       "ID": "A0005",
-      "Name": "puliaw小魚",
+      "Name": "小魚",
       "Category": "AC01",
       "Detail": "",
       "Tag": []
@@ -997,7 +997,7 @@ var jsonData = {
     },
     {
       "ID": "A0027",
-      "Name": "kavutje田鼠",
+      "Name": "田鼠",
       "Category": "AC02",
       "Detail": "",
       "Tag": []
