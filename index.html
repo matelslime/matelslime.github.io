@@ -142,7 +142,8 @@
 
         #profile,
         #commentsSection {
-            height: 27.5rem;
+            min-height: 27.3rem;
+            height: 50vh;
             overflow-y: overlay;
         }
 
@@ -199,11 +200,19 @@
             margin-top: -3rem;
         }
 
-        .container{
+        .container {
             padding-right: 0rem;
             padding-left: 0rem;
         }
 
+        .container > .text-center{
+            margin-top: -2%;
+        }   
+
+        .dropdown-item{
+            margin-top: -0.4rem;
+        }
+        
         .nav-link {
             color: #198754;
         }
@@ -330,15 +339,15 @@
     <div class="main-page h-100">
         <div id="navLinks" class="bg-light bg-opacity-75 mb-2 mb-xl-4">
             <nav class="container navbar navbar-light nav-fill ps-1 pe-1">
-                <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">植物</p>
-                <p id="ANav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">動物</p>
-                <p id="INav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">產業</p>
-                <p id="BNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">信仰</p>
-                <p id="UNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">設施</p>
-                <p id="ONav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">組織</p>
-                <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">技藝</p>
-                <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">飲食</p>
-                <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">語言</p>
+                <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">植物</p>
+                <p id="ANav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">動物</p>
+                <p id="INav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">產業</p>
+                <p id="BNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">信仰</p>
+                <p id="UNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">設施</p>
+                <p id="ONav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">組織</p>
+                <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">技藝</p>
+                <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">飲食</p>
+                <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">語言</p>
             </nav>
         </div>
         <div id="toHome" class="bg-light bg-opacity-50 disappear">
@@ -408,13 +417,13 @@
                 <div class="pb-1 pb-xl-2">
                     <div class="w-90 m-auto">
                         <div id="navTab" class="nav nav-tabs disappear" role="tablist">
-                            <button type="button" id="profileTab" class="nav-link fw-bold active" data-bs-toggle="tab"
+                            <button type="button" id="profileTab" class="nav-link fs-5 fw-bold active" data-bs-toggle="tab"
                                 data-bs-target="#profile" role="tab" aria-controls="profile"
                                 aria-selected="false">簡介</button>
-                            <button type="button" id="commentsSectionTab" class="nav-link fw-bold" data-bs-toggle="tab"
+                            <button type="button" id="commentsSectionTab" class="nav-link fs-5 fw-bold" data-bs-toggle="tab"
                                 data-bs-target="#commentsSection" role="tab" aria-controls="commentsSection"
                                 aria-selected="false">村民有話說</button>
-                            <button type="button" id="commentTab" class="nav-link fw-bold disappear"
+                            <button type="button" id="commentTab" class="nav-link fs-5 fw-bold disappear"
                                 data-bs-toggle="modal" data-bs-target="#comment">我想說</button>
                         </div>
                     </div>
@@ -561,10 +570,10 @@
                         list2 = getKeywordSearchData(data.Show, val);
                         if (key != val.substr(0, 1)) {
                             tagList += tagList != "" ? `</div></div></div>` : "";
-                            tagList += `<div class="btn-group m-1"><button class="btn btn-success btn-sm rounded-pill shadow-none dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${data.Title}</button><div class="dropdown-menu border-0 bg-transparent"><div class="dropdown-item btn-group bg-transparent" role="group" style="margin-left:-6%;"><a href="index.html?ID=${list2.ID}"" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`;
+                            tagList += `<div class="btn-group m-1"><button class="btn btn-success btn-sm rounded-pill shadow-none dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">${data.Title}</button><div class="dropdown-menu border-0 bg-transparent"><div class="dropdown-item btn-group bg-transparent" role="group" style="margin-left:-6%;"><a href="index.html?ID=${list2.ID}"" target="_blank" rel="noreferrer noopener" class="btn btn-success fs-5">${list2.Name}</a>`;
                             key = val.substr(0, 1);
                         }
-                        else { tagList += `<a href="index.html?ID=${list2.ID}" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`; }
+                        else { tagList += `<a href="index.html?ID=${list2.ID}" target="_blank" rel="noreferrer noopener" class="btn btn-success fs-5">${list2.Name}</a>`; }
                     });
                     document.getElementById("tagList").innerHTML = tagList;
                 }
@@ -662,11 +671,11 @@
                 let body = "";
                 $.each(categoryData, (index, val) => {
                     $.each(showData, (index, val2) => {
-                        body += val2.Category == val.ID ? `<div id="${val2.ID}" class="accordion-body text-white fw-bolder">${val2.Name}</div>` : ""
+                        body += val2.Category == val.ID ? `<div id="${val2.ID}" class="accordion-body text-white fs-5 fw-bolder">${val2.Name}</div>` : ""
                     });
 
                     if (body != "") {
-                        item += `<div class="accordion-item"><h2 id="${val.ID}" class="accordion-header"><button class="accordion-button collapsed text-white shadow-none fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#${val.ID}s" aria-expanded="false" aria-controls="${val.ID}s">${val.Name}</button></h2><div id="${val.ID}s" class="accordion-collapse collapse" aria-labelledby="${val.ID}" data-bs-parent="#sideNav">${body}</div></div>`;
+                        item += `<div class="accordion-item"><div id="${val.ID}" class="accordion-header"><button class="accordion-button collapsed text-white shadow-none fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#${val.ID}s" aria-expanded="false" aria-controls="${val.ID}s">${val.Name}</button></div><div id="${val.ID}s" class="accordion-collapse collapse" aria-labelledby="${val.ID}" data-bs-parent="#sideNav">${body}</div></div>`;
                         body = "";
                     }
                 });
