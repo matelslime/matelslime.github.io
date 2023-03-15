@@ -13,19 +13,19 @@
             list-style: none;
         }
 
-        a:link {
+        span a:link {
             color: #06ce02;
         }
 
-        a:visited {
+        span a:visited {
             color: #037901;
         }
 
-        a:hover {
+        span a:hover {
             color: #04ae01;
         }
 
-        a:active {
+        span a:active {
             color: #039101;
         }
 
@@ -166,8 +166,9 @@
 
         #profile,
         #commentsSection {
-            min-height: 27.3rem;
+            border-radius: 0 0 7px 7px;            
             height: 50vh;
+            min-height: 27.3rem;
             overflow-y: overlay;
         }
 
@@ -791,7 +792,7 @@
                     "color": `${$event.type == "mouseover" ? "#fff" : "#198754"}`
                 });
                 $(document.getElementById(`${id}Icon`)).css({
-                    "color": `${$event.type == "mouseover" ? "greenyellow" : "#fff"}`
+                    "color": `${$event.type == "mouseover" ? "#ffc107" : "#fff"}`
                 });
             }
         })
