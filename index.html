@@ -166,7 +166,7 @@
 
         #profile,
         #commentsSection {
-            border-radius: 0 0 7px 7px;            
+            border-radius: 0 0 7px 7px;
             height: 50vh;
             min-height: 27.3rem;
             overflow-y: overlay;
@@ -518,29 +518,14 @@
             </div>
         </div>
     </div>
-    <!-- <div id="photo" class="modal fade" data-bs-keyboard="false" tabindex="-1" aria-labelledby="commentLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" style="margin:-0.8rem;">
-                    <iframe src="https://www.google.com/maps/d/embed?mid=1KW1prgspPwpuwLeaPLcdb2lXs2IN07k&ehbc=2E312F"
-                        width="100%" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div id="media" class="modal fade" data-bs-keyboard="false" tabindex="-1" aria-labelledby="commentLabel"
         aria-hidden="true">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body" style="margin:-1rem;">
-                    <iframe
-                        src="https://www.google.com/maps/d/embed?mid=1KW1prgspPwpuwLeaPLcdb2lXs2IN07k&ehbc=2E312F&ll=22.45288887316359%2C120.88654761936547&z=16"
-                        width="100%" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="" width="100%" height="300" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -618,6 +603,9 @@
                         profile += val != "" ? (val.substr(0, 1) == "*" ? `<span class="w-100 h5">${val.substr(1)}</span><br>` : `<span class="w-100">${val}</span><br>`) : "<br>";
                     });
                     profileElm.innerHTML = profile;
+                    $(document.getElementsByClassName("bi-map-fill")).on("click", ($event) => {
+                        $('#media iframe').attr("src", list.Map);
+                    })
                 }
                 if (list.Tag != Array(0)) {
                     let data;
