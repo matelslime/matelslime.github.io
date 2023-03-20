@@ -167,8 +167,7 @@
         #profile,
         #commentsSection {
             border-radius: 0 0 7px 7px;
-            height: 50vh;
-            min-height: 27.3rem;
+            height: 58vh;
             overflow-y: overlay;
         }
 
@@ -343,16 +342,37 @@
             }
         }
 
+        @media screen and (max-width:1200px) and (min-width:992px) {
+            #profile,
+            #commentsSection {
+                height: 60.38vh;
+            }
+        }
+
+        @media screen and (max-width:991px) and (min-width:768px) {
+            #profile,
+            #commentsSection {
+                height: 52.18vh;
+            }
+        }
+
         @media screen and (max-width:1299px) and (min-width:768px) {
             .Icon {
                 font-size: 3.25rem;
             }
         }
 
+        @media screen and (max-width:767.2px) {
+            #profile,
+            #commentsSection {
+                height: 53.36vh;
+            }
+        }
+
         @media screen and (max-width:767px) {
             .Icon {
                 font-size: 3rem;
-            }
+            }            
         }
     </style>
 </head>
@@ -371,15 +391,15 @@
     <div class="main-page h-100">
         <div id="navLinks" class="bg-light bg-opacity-75 mb-2 mb-xl-4">
             <nav class="container navbar navbar-light nav-fill ps-1 pe-1">
-                <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">植物</p>
-                <p id="ANav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">動物</p>
-                <p id="INav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">產業</p>
-                <p id="BNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">信仰</p>
-                <p id="UNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">設施</p>
-                <p id="ONav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">組織</p>
-                <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">技藝</p>
-                <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">飲食</p>
-                <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bold border-2">語言</p>
+                <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">植物</p>
+                <p id="ANav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">動物</p>
+                <p id="INav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">產業</p>
+                <p id="BNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">信仰</p>
+                <p id="UNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">設施</p>
+                <p id="ONav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">組織</p>
+                <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">技藝</p>
+                <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">飲食</p>
+                <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">語言</p>
             </nav>
         </div>
         <div id="toHome" class="bg-light bg-opacity-50 disappear">
@@ -603,9 +623,6 @@
                         profile += val != "" ? (val.substr(0, 1) == "*" ? `<span class="w-100 h5">${val.substr(1)}</span><br>` : `<span class="w-100">${val}</span><br>`) : "<br>";
                     });
                     profileElm.innerHTML = profile;
-                    $(document.getElementsByClassName("bi-map-fill")).on("click", ($event) => {
-                        $('#media iframe').attr("src", list.Map);
-                    })
                 }
                 if (list.Tag != Array(0)) {
                     let data;
@@ -629,6 +646,9 @@
                 })
                 $(document.getElementById("toTop")).on("click", ($event) => {
                     $(profileElm).scrollTop(0);
+                })
+                $(document.getElementsByClassName("bi-map-fill")).on("click", ($event) => {
+                    $('#media iframe').attr("src", list.Map);
                 })
             }
 
