@@ -72,6 +72,17 @@
             color: #fff;
         }
 
+        .Icon::after {
+            border: 3.5px solid #fff;
+            border-radius: 15px;
+            content: "";
+            height: 70px;
+            margin-top: 7px;
+            margin-left: -63.5px;
+            position: absolute;
+            width: 70px;
+        }
+
         .block-color {
             background-color: #d5d5d5;
             border: #d5d5d5;
@@ -180,8 +191,8 @@
             border-radius: 0 0 7px 7px;
             height: 58vh;
             overflow-y: overlay;
-            padding-left: 5rem!important;
-            padding-right: 5.2rem!important;
+            padding-left: 5rem !important;
+            padding-right: 5.2rem !important;
         }
 
         #commentsSection {
@@ -389,20 +400,32 @@
             .Icon {
                 font-size: 3.25rem;
             }
+
+            .Icon::after {
+                height: 68px;
+                margin-top: 5px;
+                margin-left: -60.5px;
+                width: 68px;
+            }
+        }
+
+        @media screen and (max-width:904px) {
+            .Icon::after {
+                border: none;
+            }   
         }
 
         @media screen and (max-width:767.2px) {
-
             #profile,
             #commentsSection {
                 height: 53.3vh;
-            }
+            }        
         }
 
         @media screen and (max-width:767px) {
             .Icon {
                 font-size: 3rem;
-            }
+            }            
         }
     </style>
 </head>
@@ -430,6 +453,8 @@
                 <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">技藝</p>
                 <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">飲食</p>
                 <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">語言</p>
+                <p id="TNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">教育</p>
+                <p id="HNav" class="nav-link btn btn-outline-success ms-1 me-1 fs-5 fw-bolder border-3">歷史</p>
             </nav>
         </div>
         <div id="toHome" class="bg-light bg-opacity-50 disappear">
@@ -456,7 +481,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-7"></div>
+                <div class="col-3"></div>
+                <div class="col-2 text-center">
+                    <i id="HIcon" class="bi bi-signpost-split Icon"></i>
+                </div>
+                <div class="col-2"></div>
                 <div class="col-1">
                     <i id="OIcon" class="bi bi-diagram-3 Icon"></i>
                 </div>
@@ -481,6 +510,10 @@
                 <div class="col-3"></div>
                 <div class="col-1">
                     <i id="IIcon" class="bi bi-minecart-loaded Icon"></i>
+                </div>
+                <div class="col-5"></div>
+                <div class="col-2 text-center">
+                    <i id="TIcon" class="bi bi-magic Icon"></i>
                 </div>
             </div>
             <div class="row mb-4">
@@ -513,8 +546,9 @@
                         <div id="profile"
                             class="tab-pane w-90 m-auto alert-success pt-2 pb-2  fade show active w-xxl-98"
                             role="tabpanel" aria-labelledby="profileTab"></div>
-                        <div id="commentsSection" class="tab-pane w-90 m-auto alert-success pt-3 pb-2 ps-2 pe-3 fade w-xxl-98"
-                            role="tabpanel" aria-labelledby="commentsSectionTab"></div>
+                        <div id="commentsSection"
+                            class="tab-pane w-90 m-auto alert-success pt-3 pb-2 ps-2 pe-3 fade w-xxl-98" role="tabpanel"
+                            aria-labelledby="commentsSectionTab"></div>
                         <div id="comment" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
                             tabindex="-1" aria-labelledby="commentLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable">
@@ -834,6 +868,11 @@
                 $(document.getElementById(`${id}Icon`)).css({
                     "color": `${$event.type == "mouseover" ? "#ffc107" : "#fff"}`
                 });
+                $(document.getElementById(`${id}Icon`)).after
+                console.log($(`#${id}Icon:after`).css("border"))
+                $(`#${id}Icon:after`).css({
+                    "border": `${$event.type == "mouseover" ? "#ffc107" : "#fff"}`
+                });
             }
         })
 
@@ -852,7 +891,9 @@
                 case "O": { showData = Data.Organize; categoryData = Data.CategoryList.OrganizeList; title = "組織"; break; }
                 case "S": { showData = Data.Skill; categoryData = Data.CategoryList.SkillList; title = "技藝"; break; }
                 case "D": { showData = Data.Diet; categoryData = Data.CategoryList.DietList; title = "飲食"; break; }
-                default: { showData = Data.Language; categoryData = Data.CategoryList.LanguageList; title = "語言"; break; }
+                case "L": { showData = Data.Language; categoryData = Data.CategoryList.LanguageList; title = "語言"; break; }
+                case "T": { showData = Data.Teach; categoryData = Data.CategoryList.TeachList; title = "教育"; break; }
+                default: { showData = Data.History; categoryData = Data.CategoryList.HistoryList; title = "歷史"; break; }
             }
 
             return {

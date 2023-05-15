@@ -129,7 +129,9 @@ var jsonData = {
         "ID": "LC01",
         "Name": "傳說"
       }
-    ]
+    ],
+    "TeachList": [],
+    "HistoryList": []
   },
   "Plant": [
     {
@@ -1903,5 +1905,7 @@ var jsonData = {
       "Detail": "",
       "Tag": []
     }
-  ]
+  ],
+  "Teach":[],
+  "History":[]
 }
