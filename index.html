@@ -204,7 +204,6 @@
     <script type="text/javascript" src="Data/data.json"></script>
     <script type="text/javascript" src="Data/comment.json"></script>
     <script>
-        'use strict'
         const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
         const Data = JSON.parse(JSON.stringify(jsonData));
 
