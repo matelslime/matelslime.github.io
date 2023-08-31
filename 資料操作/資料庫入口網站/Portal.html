@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料庫入口網站</title>
+    <link href="min/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="min/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <style>
+        @media screen and (min-width:1300px) {
+            #page1 .row {
+                margin: 0.2rem;
+            }
+
+            .Icon {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media screen and (max-width:1299px) and (min-width:768px) {
+            #page1 .row {
+                margin: -0.2rem;
+            }
+
+            .Icon {
+                font-size: 3.25rem;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            #page1 .row {
+                margin: -0.5rem;
+            }
+
+            .Icon {
+                font-size: 3rem;
+            }
+        }
+
+        * {
+            list-style: none;
+        }
+
+        #page1 {
+            overflow: hidden
+        }
+
+        .bg {
+            background: url("Photo/bg.png") no-repeat center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .disappear {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .Icon {
+            color: #fff;
+        }
+
+        .block-color {
+            background-color: #d5d5d5;
+            border: #d5d5d5;
+            color: #7e7e7e;
+        }
+
+        #toMap {
+            bottom: 0px;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+            height: 10.5rem;
+            left: 0px;
+            position: fixed;
+            width: 10.5rem;
+        }
+
+        #toMap>i {
+            bottom: -0.5rem;
+            font-size: 5rem;
+            left: 0.5rem;
+            position: absolute;
+        }
+
+        #home {
+            position: fixed;
+            right: 25px;
+            top: 10px;
+        }
+
+        #home>i {
+            font-size: 2.5rem;
+        }
+
+        #home>i:hover {
+            color: #1b6a45 !important;
+        }
+
+        .bi-globe2:hover {
+            color: #95ff00 !important;
+        }
+
+        #districtIcon {
+            color: rgba(255, 255, 255, 0);
+            background: transparent url("data:image/png;base64,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") center/1em auto no-repeat;
+        }
+
+        .btn-pin {
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146zm.122 2.112v-.002.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a4.507 4.507 0 0 0-.288-.076 4.922 4.922 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a4.924 4.924 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034.114 0 .23-.011.343-.04L9.927 2.028c-.029.113-.04.23-.04.343a1.779 1.779 0 0 0 .062.46z'/%3e%3c/svg%3e") center/2em auto no-repeat;
+        }
+
+        .btn-pin:focus {
+            opacity: 0.5;
+        }
+
+        .btn-pin:hover {
+            opacity: 0.75;
+        }
+
+        .chk {
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z'/%3e%3c/svg%3e") center/2em auto no-repeat;
+        }
+
+        .bi-handbag-fill {
+            color: #373e44;
+        }
+
+        .bi-handbag-fill:hover {
+            color: #22272a;
+        }
+
+        .bi-instagram {
+            color: #ff00b3;
+        }
+
+        .bi-instagram:hover {
+            color: #d20193;
+        }
+
+        #commentTab {
+            background: #bed2c9;
+        }
+
+        #profile,
+        #commentsSection {
+            height: 27rem;
+            overflow-y: overlay;
+        }
+
+        #commentsSection .alert-light {
+            padding: 0.6rem 0.6rem;
+        }
+
+        #commentsSection .alert-light>.btn-close {
+            margin-top: -0.5rem;
+            margin-right: -0.25rem
+        }
+
+        .T {
+            padding: 0.1rem 1rem;
+        }
+
+        .report {
+            margin-top: -0.8rem;
+            margin-bottom: 0.3rem;
+            right: 0.05rem;
+        }
+
+        .report>span:hover {
+            color: #ff6a00;
+        }
+
+        #tagList .btn {
+            background-color: #73b4b4;
+            border-color: #7ab4b4;
+        }
+
+        #tagList .btn:hover {
+            background-color: #5e9b9b;
+            border-color: #669b9b;
+        }
+
+        #tagList .btn:active {
+            background-color: #508787;
+            border-color: #588787;
+        }
+
+        #nameLbl,
+        #districtLbl {
+            margin-bottom: 0.25rem;
+        }
+
+        #commentDetail {
+            height: 5rem;
+        }
+
+        .nav-link {
+            color: #198754;
+        }
+
+        .nav-tabs>.active {
+            background-color: #d1e7dd !important;
+            border: none;
+        }
+
+        .nav-tabs>.nav-link:hover,
+        .nav-tabs>.nav-link:focus {
+            color: #146941;
+        }
+
+        .accordion {
+            overflow-y: overlay;
+        }
+
+        .accordion-button {
+            background-color: #96ccce;
+            padding: 1rem 1.5rem;
+        }
+
+        .accordion-button:hover,
+        .accordion-button:not(.collapsed) {
+            background-color: #7fadae;
+        }
+
+        .accordion-body {
+            background-color: #96ccce;
+            padding: 1rem 2rem;
+        }
+
+        .accordion-body-click {
+            background-color: #78a3a3;
+        }
+
+        .accordion-body:hover {
+            background-color: #7fadae;
+        }
+
+        .accordion::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .accordion::-webkit-scrollbar-track,
+        .accordion::-webkit-scrollbar-track-piece {
+            background: #fff;
+        }
+
+        .accordion::-webkit-scrollbar-thumb {
+            background: #6c6c6cc8;
+            border-radius: 7px;
+        }
+
+        .offcanvas {
+            background-color: #96ccce;
+            width: 300px;
+        }
+
+        .offcanvas-header .btn-close {
+            margin-right: 0rem;
+        }
+
+        .offcanvas-start {
+            transform: translateX(-95%);
+        }
+
+        .offcanvas:hover,
+        #pinCheck:checked+.offcanvas {
+            transform: none;
+        }
+
+        .w-70 {
+            width: 70% !important;
+        }
+
+        .w-97 {
+            width: 97% !important;
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <input type="hidden" id="accordionBodyId" value="">
+    <div id="home"></div>
+    <div id="map" class="text-center m-4 disappear"></div>
+    <div id="page1">
+        <div class="bg-light bg-opacity-75 mb-2 mb-xl-4">
+            <nav class="container navbar navbar-light nav-fill ps-1 pe-1">
+                <p id="PNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">植物</p>
+                <p id="ANav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">動物</p>
+                <p id="INav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">產業</p>
+                <p id="BNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">信仰</p>
+                <p id="UNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">設施</p>
+                <p id="ONav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">組織</p>
+                <p id="SNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">技藝</p>
+                <p id="DNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">飲食</p>
+                <p id="LNav" class="nav-link btn btn-outline-success ms-1 me-1 fw-bold border-2">語言</p>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-1">
+                <i id="BIcon" class="bi bi-stars Icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-1">
+                <i id="LIcon" class="bi bi-translate Icon"></i>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-1">
+                <i id="UIcon" class="bi bi-building Icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7"></div>
+            <div class="col-1">
+                <i id="OIcon" class="bi bi-diagram-3 Icon"></i>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-1">
+                <i id="PIcon" class="bi bi-tree Icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-1">
+                <i id="DIcon" class="bi bi-egg-fried Icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-1">
+                <i id="SIcon" class="bi bi-tools Icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-1">
+                <i id="IIcon" class="bi bi-minecart-loaded Icon"></i>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-6"></div>
+            <div class="col-1">
+                <i id="AIcon" class="bi bi-bug Icon"></i>
+            </div>
+        </div>
+        <div id="toMap" class="bg-light bg-opacity-50">
+            <i class="bi bi-globe2 text-black"></i>
+        </div>
+    </div>
+    <div id="page2" class="disappear">
+        <input type="checkbox" id="pinCheck">
+        <div id="aside" class="offcanvas offcanvas-start h-100 visible">
+            <div class="offcanvas-header mb-2">
+                <h5 class="offcanvas-title">
+                    <input id="search" class="form-control ms-2" type="search" placeholder="Search">
+                </h5>
+                <button type="button" id="pin" class="btn-close btn-pin shadow-none text-reset"></button>
+            </div>
+            <div id="sideNav" class="accordion accordion-flush"></div>
+        </div>
+        <div class="container">
+            <div class="pt-1 pt-md-2 pt-lg-3 pt-xl-4 pb-1 pb-xl-2 text-center">
+                <span id="title" class="display-3"></span>&nbsp;<i id="districtIcon"
+                    class="bi bi-geo-alt display-6 disappear"></i>
+            </div>
+            <div class="pt-1 pt-md-2 pt-lg-3 pt-xl-4 pb-1 pb-xl-2">
+                <div class="w-70 m-auto">
+                    <div id="navTab" class="nav nav-tabs disappear" role="tablist">
+                        <button type="button" id="profileTab" class="nav-link fw-bold active" data-bs-toggle="tab"
+                            data-bs-target="#profile" role="tab" aria-controls="profile"
+                            aria-selected="false">簡介</button>
+                        <button type="button" id="commentsSectionTab" class="nav-link fw-bold" data-bs-toggle="tab"
+                            data-bs-target="#commentsSection" role="tab" aria-controls="commentsSection"
+                            aria-selected="false">村民有話說</button>
+                        <button type="button" id="commentTab" class="nav-link fw-bold disappear" data-bs-toggle="modal"
+                            data-bs-target="#comment">我想說</button>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="profile" class="tab-pane w-70 m-auto alert-success pt-2 pb-2 ps-2 pe-3 fade show active"
+                        role="tabpanel" aria-labelledby="profileTab">
+                    </div>
+                    <div id="commentsSection" class="tab-pane w-70 m-auto alert-success pt-3 pb-2 ps-2 pe-3 fade"
+                        role="tabpanel" aria-labelledby="commentsSectionTab">
+                    </div>
+                    <div id="comment" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="commentLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 id="commentLabel" class="modal-title">新增留言</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ps-5">
+                                    <div class="row w-100">
+                                        <div class="col-5">
+                                            <label for="name" id="nameLbl" class="form-label">姓名</label>
+                                            <input type="text" id="name" class="form-control">
+                                            <label id="nameErr" class="form-label text-danger disappear">未填寫姓名</label>
+                                        </div>
+                                        <div class="col-7">
+                                            <label for="district" id="districtLbl" class="form-label">地區</label>
+                                            <select id="district" class="form-select">
+                                                <option selected>請選擇...</option>
+                                                <option>土坂</option>
+                                                <option>台坂</option>
+                                                <option>大鳥</option>
+                                                <option>其他</option>
+                                            </select>
+                                            <label id="districtErr"
+                                                class="form-label text-danger disappear">未選擇地區</label>
+                                        </div>
+                                    </div>
+                                    <div class="row w-100 mt-3">
+                                        <div class="col">
+                                            <textarea id="commentDetail" class="w-100"></textarea>
+                                            <label id="detailErr" class="form-label text-danger disappear">未填寫留言</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="clear" class="btn btn-secondary">清空</button>
+                                    <button type="button" id="send" class="btn btn-success">發送</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="tagList" class="w-70 h-25 m-auto"></div>
+            </div>
+        </div>
+    </div>
+    <script src="min/popper.min.js"></script>
+    <script src="min/bootstrap.min.js"></script>
+    <script src="min/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="data/data.json"></script>
+    <script type="text/javascript" src="data/comment.json"></script>
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), { get: (searchParams, prop) => searchParams.get(prop) });
+        const Data = JSON.parse(JSON.stringify(jsonData));
+        $(document.getElementById("toMap")).on("click", () => {
+            switchMapScene();
+            document.getElementById("map").innerHTML = `<iframe src="https://www.google.com/maps/d/embed?mid=1KW1prgspPwpuwLeaPLcdb2lXs2IN07k&ehbc=2E312F" width="90%" height="700" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+            document.getElementById("home").innerHTML = `<i class="bi bi-house-door-fill text-black" onclick="switchMapScene();"></i>`;
+        })
+        $(".Icon, .btn-outline-success").on({
+            "click": ($event) => {
+                const data = dataFilter($event.target.id.substr(0, 1)), showData = data.Show;
+                setAccordionItem(data.Category, showData);
+                switchPageScene();
+                clickCloseBtn();
+                document.getElementById("home").innerHTML = `<i class="bi bi-house-door-fill text-black" onclick="switchPageScene()"></i>`;
+                document.getElementById("title").innerText = title;
+                $(document.getElementById("districtIcon")).addClass("disappear");  
+                const hBox = document.getElementById("accordionBodyId");
+                const accordionBodyId = hBox.value;
+                if (!isNullOrEmptyOrUndifind(accordionBodyId)) {
+                    const accordionBodyElm = document.getElementById(accordionBodyId);
+                    $(accordionBodyElm).addClass("accordion-body-click").parent().addClass("show").prev().children().removeClass("collapsed").attr("aria-expanded", "true");
+                    $(document.getElementById("sideNav")).scrollTop(accordionBodyElm.offsetTop - 75);
+                    setContainer(showData, accordionBodyId);
+                    setCommentsSection(accordionBodyId);
+                    hBox.value = "";
+                }
+                $(document.getElementsByClassName("accordion-body")).on("click", ($event) => {
+                    $(document.getElementsByClassName("accordion-body-click")).removeClass("accordion-body-click");
+                    $(document.getElementById($event.target.id)).addClass("accordion-body-click");
+                    document.getElementById("profileTab").click();
+                    setContainer(showData, $event.target.id);
+                    setCommentsSection($event.target.id);
+                });
+            },
+            "mouseover mouseout": ($event) => {
+                const id = $event.target.id.substr(0, 1);
+                $(document.getElementById(`${id}Nav`)).css({
+                    "background-color": `${$event.type == "mouseover" ? "#198754" : "transparent"}`,
+                    "color": `${$event.type == "mouseover" ? "#fff" : "#198754"}`
+                });
+                $(document.getElementById(`${id}Icon`)).css({ "color": `${$event.type == "mouseover" ? "greenyellow" : "#fff"}` });
+            }
+        })
+        $(document.getElementById("search")).on({
+            "search keyup": ($event) => {
+                if ($event.target.value == "") { $(document.getElementsByClassName("accordion-body")).removeClass("disappear"); }
+                else { $.each(document.getElementsByClassName("accordion-body"), (index, val) => { val.innerText.indexOf($event.target.value) == -1 ? $(document.getElementById(val.id)).addClass("disappear") : $(document.getElementById(val.id)).removeClass("disappear"); }); }
+            }
+        })
+        $(document.getElementById("pin")).on("click", () => { clickCloseBtn(); })
+        $(document.getElementById("profileTab")).on("click", () => { $(document.getElementById("commentTab")).addClass("disappear") })
+        $(document.getElementById("commentsSectionTab")).on("click", () => { $(document.getElementById("commentTab")).removeClass("disappear") })
+        $("#comment .btn-close, #clear").on("click", () => {
+            $(document.getElementById("nameErr")).addClass("disappear");
+            $(document.getElementById("districtErr")).addClass("disappear");
+            $(document.getElementById("detailErr")).addClass("disappear");
+            resetComment();
+            $("#clear").blur();
+        })
+        $(document.getElementById("name")).on("focus", () => {
+            $(document.getElementById("nameErr")).addClass("disappear");
+        })
+        $(document.getElementById("district")).on("focus", () => {
+            $(document.getElementById("districtErr")).addClass("disappear");
+        })
+        $(document.getElementById("commentDetail")).on("focus", () => {
+            $(document.getElementById("detailErr")).addClass("disappear");
+        })
+        $(document.getElementById("send")).on("click", () => {
+            addComment();
+            $(document.getElementsByClassName("Delete")).on("click", ($event) => {
+                const commentElm = $(event.currentTarget).parent().parent();
+                if ((commentElm.prev().attr("class") == "T") && (isNullOrEmptyOrUndifind(commentElm.next().attr("class")) || commentElm.next().attr("class") == "T")) commentElm.prev().remove();
+            })
+        })
+        if (params.ID != null) {
+            document.getElementById("accordionBodyId").value = params.ID;
+            document.getElementById(`${params.ID.substr(0, 1)}Nav`).click();
+        }
+        function dataFilter(Alphabet) {
+            switch (Alphabet) {
+                case "P": { showData = Data.Plant; categoryData = Data.CategoryList.PlantList; title = "植物"; break; }
+                case "A": { showData = Data.Animal; categoryData = Data.CategoryList.AnimalList; title = "動物"; break; }
+                case "I": { showData = Data.Industry; categoryData = Data.CategoryList.IndustryList; title = "產業"; break; }
+                case "B": { showData = Data.Belief; categoryData = Data.CategoryList.BeliefList; title = "信仰"; break; }
+                case "U": { showData = Data.Utilities; categoryData = Data.CategoryList.UtilitiesList; title = "設施"; break; }
+                case "O": { showData = Data.Organize; categoryData = Data.CategoryList.OrganizeList; title = "組織"; break; }
+                case "S": { showData = Data.Skill; categoryData = Data.CategoryList.SkillList; title = "技藝"; break; }
+                case "D": { showData = Data.Diet; categoryData = Data.CategoryList.DietList; title = "飲食"; break; }
+                default: { showData = Data.Language; categoryData = Data.CategoryList.LanguageList; title = "語言"; break; }
+            }
+            return { Show: showData, Category: categoryData, Title: title };
+        }
+        function setAccordionItem(categoryData, showData) {
+            let item = "", body = "";
+            $.each(categoryData, (index, val) => {
+                $.each(showData, (index, val2) => { body += val2.Category == val.ID ? `<div id="${val2.ID}" class="accordion-body text-white fw-bolder">${val2.Name}</div>` : "" });
+                if (body != "") {
+                    item += `<div class="accordion-item"><h2 id="${val.ID}" class="accordion-header">
+                    <button class="accordion-button collapsed text-white shadow-none fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#${val.ID}s" aria-expanded="false" aria-controls="${val.ID}s">
+                    ${val.Name}</button></h2><div id="${val.ID}s" class="accordion-collapse collapse" aria-labelledby="${val.ID}" data-bs-parent="#sideNav">${body}</div></div>`;
+                    body = "";
+                }
+            });
+            document.getElementById("sideNav").innerHTML = item;
+        }
+        function setContainer(showData, id) {
+            const list = getKeywordSearchData(showData, id), profileElm = document.getElementById("profile");
+            $(document.getElementById("navTab")).removeClass("disappear");
+            $(document.getElementById("title")).text(list.Name);
+            id=="O030"?$(document.getElementById("districtIcon")).removeClass("disappear"):$(document.getElementById("districtIcon")).addClass("disappear");
+            profileElm.innerHTML = "";
+            if (!isNullOrEmptyOrUndifind(list.Detail)) { profileElm.innerHTML = setProfile(list.Detail); }
+            if (list.Tag != Array(0)) { document.getElementById("tagList").innerHTML = setTagList(list.Tag); }
+        }
+        function setProfile(Detail) {
+            let profile = "";
+            $.each(Detail.split("@"), (index, val) => { profile += val != "" ? (val.substr(0, 1) == "*" ? `<span class="w-100 h4">${val.substr(1)}</span><br>` : `<span class="w-100">${val}</span><br>`) : "<br>"; });
+            return profile;
+        }
+        function setTagList(Tag) {
+            let data, list2, tagList = "", key = "";
+            $.each(Tag.sort(), (index, val) => {
+                data = dataFilter(val.substr(0, 1));
+                list2 = getKeywordSearchData(data.Show, val);
+                if (key != val.substr(0, 1)) {
+                    tagList += tagList != "" ? `</div></div></div>` : "";
+                    tagList += `<div class="btn-group m-1"><button class="btn btn-success btn-sm rounded-pill shadow-none dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${data.Title}</button><div class="dropdown-menu border-0 bg-transparent"><div class="dropdown-item btn-group bg-transparent" role="group" style="margin-left:-6%;"><a href="portal.html?ID=${list2.ID}"" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`;
+                    key = val.substr(0, 1);
+                }
+                else { tagList += `<a href="portal.html?ID=${list2.ID}" target="_blank" rel="noreferrer noopener" class="btn btn-success">${list2.Name}</a>`; }
+            });
+            return tagList;
+        }
+        function setCommentsSection(id) {
+            const jsonData = JSON.parse(JSON.stringify(commentData))[id], commentsSectionElm = document.getElementById("commentsSection");
+            commentsSectionElm.innerHTML = "";
+            if (!isNullOrEmptyOrUndifind(jsonData)) {
+                const Data = jsonData.sort(function (a, b) {
+                    if (a.ID.substr(3) < b.ID.substr(3)) return 1;
+                    if (a.ID.substr(3) > b.ID.substr(3)) return -1;
+                    return 0;
+                });
+                const nowDate = new Date();
+                let comment = "", otimeStr = "", ntimeStr = "";
+                $.each(Data, (index, val) => {
+                    ntimeStr = convertTimeStamp(nowDate, new Date(val.Time));
+                    if (otimeStr != ntimeStr) {
+                        otimeStr = ntimeStr;
+                        comment += `<div class="T">${ntimeStr}</div>`;
+                    };
+                    comment += `<div class="w-97"><div class="alert alert-light ms-3 ${val.Block ? "text-center block-color" : ""}">${val.Block ? "" : `<div class="h5">${val.Author}&nbsp;&nbsp;&nbsp;&nbsp;${val.District}</div>`}<div class="w-100">${val.Block ? "--因有人認為該留言稍有不妥，已暫時屏蔽，請靜候委員會審查--" : val.Detail}</div></div>${val.Block ? "" : `<div class="report text-end"><span>檢舉</span></div>`}</div>`
+                })
+                commentsSectionElm.innerHTML = comment;
+            }
+        }
+        function addComment() {
+            const nameElm = document.getElementById("name"), districtElm = document.getElementById("district"), detailElm = document.getElementById("commentDetail"), boardElm = document.getElementById("commentsSection"), ntimeStr = "剛剛";
+            if (isNullOrEmptyOrUndifind(nameElm.value) || districtElm.selectedIndex == 0 || isNullOrEmptyOrUndifind(detailElm.value)) {
+                if (isNullOrEmptyOrUndifind(nameElm.value)) {
+                    $(document.getElementById("nameErr")).removeClass("disappear");
+                }
+                if (districtElm.selectedIndex == 0) {
+                    $(document.getElementById("districtErr")).removeClass("disappear");
+                }
+                if (isNullOrEmptyOrUndifind(detailElm.value)) {
+                    $(document.getElementById("detailErr")).removeClass("disappear");
+                }
+                return;
+            }
+            if (!isNullOrEmptyOrUndifind(boardElm.firstChild)) { if (boardElm.firstChild.innerText == ntimeStr) { boardElm.removeChild(document.getElementsByClassName("T")[0]); } }
+            $(boardElm).prepend(`<div class="T">${ntimeStr}</div><div class="w-97"><div class="alert alert-light alert-dismissible fade show ms-3 " role="alert"><button type="button" class="btn-close Delete" data-bs-dismiss="alert" aria-label="Close"></button><div class="h5">${htmlEncode(nameElm.value)}&nbsp;&nbsp;&nbsp;&nbsp;${htmlEncode(districtElm.options[districtElm.selectedIndex].innerText)}</div><div class="w-100">${htmlEncode(detailElm.value)}</div></div></div>`);
+            nameElm.value = "";
+            districtElm.selectedIndex = 0;
+            detailElm.value = "";
+            $(document.getElementById("commentLabel")).next().click();
+        }
+        function resetComment() {
+            document.getElementById("name").value = "";
+            document.getElementById("district").selectedIndex = 0;
+            document.getElementById("commentDetail").value = "";
+        }
+        function getKeywordSearchData(data, key) { return $(data).map((i, v) => { if (v.ID.toLowerCase().indexOf(key.toLowerCase()) != -1) { return v; } })[0]; }
+        function switchMapScene() {
+            $(document.getElementById("page1")).toggleClass("disappear");
+            $(document.getElementById("map")).toggleClass("disappear").empty();
+            document.getElementById("home").innerHTML = "";
+        }
+        function switchPageScene() {
+            $("#page1, #page2").toggleClass("disappear");
+            $("body").toggleClass("bg");
+            $("#title, #profile, #commentsSection, #tagList").empty();
+            $(document.getElementById("districtIcon")).addClass("disappear");
+            $(document.getElementById("navTab")).addClass("disappear");
+            if ($(document.getElementById("pinCheck")).prop("checked")) { clickCloseBtn(); };
+            document.getElementById("home").innerHTML = "";
+        }
+        function clickCloseBtn() {
+            const pinCheckElm = document.getElementById("pinCheck");
+            $(pinCheckElm).prop("checked", !$(pinCheckElm).prop("checked"));
+            $(document.getElementById("pin")).toggleClass("chk");
+        }
+        function convertTimeStamp(now, before) {
+            let timeMsg = "現在";
+            if (now.getFullYear() > before.getFullYear())
+                timeMsg = (now.getFullYear() - before.getFullYear()) + "年前";
+            else if (now.getMonth() > before.getMonth())
+                timeMsg = (now.getMonth() - before.getMonth()) + "月前";
+            else if (now.getDate() > before.getDate())
+                timeMsg = (now.getDate() - before.getDate()) + "日前";
+            else if (now.getHours() > before.getHours())
+                timeMsg = (now.getHours() - before.getHours()) + "小時前";
+            else if (now.getMinutes() > before.getMinutes())
+                timeMsg = (now.getMinutes() - before.getMinutes()) + "分前";
+            else if (now.getSeconds() > before.getSeconds())
+                timeMsg = (now.getSeconds() - before.getSeconds()) + "秒前";
+            return timeMsg;
+        }
+        function isNullOrEmptyOrUndifind(val) { return (val == "" || val == null || typeof val == undefined) ? true : false; }
+        function htmlEncode(str) {
+            let ele = document.createElement('span');
+            ele.appendChild(document.createTextNode(str));
+            return ele.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

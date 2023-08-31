@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable</title>
+    <link href="bootstrap-5.1.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="icons-1.9.1/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 mt-2">
+            <!-- <input id="txt" type="text">
+            <button id="btn">轉換</button> -->
+            <div class="row">
+                <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+                    <select id="selectStatus" class="form-select">
+                        <option value=""></option>
+                        <option value="0">植物</option>
+                        <option value="1">動物</option>
+                        <option value="2">產業</option>
+                        <option value="3">信仰</option>
+                        <option value="4">公共設施</option>
+                        <option value="5">組織</option>
+                        <option value="6">技藝</option>
+                        <option value="7">飲食</option>
+                    </select>
+                </div>
+                <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+                    <select id="selectStatus2" class="form-select"></select>
+                </div>
+                <div class="mt-2 mt-sm-0 col-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="input-group">
+                        <input type="text" id="searchName" class="form-control" placeholder="查詢名稱...">
+                        <span class="input-group-text" id="reset"><i class="bi bi-arrow-counterclockwise"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div id="show" class="table-responsive"></div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script>
+        const data = JSON.parse(JSON.stringify(jsonData));
+        var showData;
+        var selectData;
+
+        $("#selectStatus").on("change", () => {
+            let selectStatusSelected = $("#selectStatus :selected").val();
+            if (!isNullOrEmptyOrUndifind(selectStatusSelected)) {
+                refreshData(selectStatusSelected);
+                refreshOption();
+            }
+            else {
+                $("#selectStatus2").empty();
+            }
+            refreshTable();
+        })
+        $("#selectStatus2").on("change", () => { refreshTable(); });
+        $("#searchName").on("keyup", () => { refreshTable(); });
+        $("#reset").on("click", () => { $("#searchName").val(""); refreshTable(); });
+
+        function keywordSearch(searchName) {
+            let results = $(showData).map((i, v) => {
+                if (v.Name.toLowerCase().indexOf(searchName.toLowerCase()) != -1) { return v; }
+            });
+
+            return results;
+        }
+
+        function refreshData(selectStatusSelected) {
+            switch (selectStatusSelected) {
+                case "0": { showData = data.Plant; selectData = data.CategoryList.PlantList; break; }
+                case "1": { showData = data.Animal; selectData = data.CategoryList.AnimalList; break; }
+                case "2": { showData = data.Industry; selectData = data.CategoryList.IndustryList; break; }
+                case "3": { showData = data.Belief; selectData = data.CategoryList.BeliefList; break; }
+                case "4": { showData = data.Utilities; selectData = data.CategoryList.UtilitiesList; break; }
+                case "5": { showData = data.Organize; selectData = data.CategoryList.OrganizeList; break; }
+                case "6": { showData = data.Skill; selectData = data.CategoryList.SkillList; break; }
+                default: { showData = data.Diet; selectData = data.CategoryList.DietList; break; }
+            }
+        }
+
+        function refreshOption() {
+            let options = `<option value=""></option>`;
+            $.each(selectData, (index, val) => {
+                options += `<option value="${val.ID}">${val.Name}</option>`;
+            })
+            $("#selectStatus2").html(options);
+        }
+
+        function refreshTable() {
+            if ($("#selectStatus :selected").text() == "") {
+                $("#show").empty();
+            }
+            else {
+                let searchName = $("#searchName").val();
+                let selected2 = $("#selectStatus2 :selected").val();
+                let tableData = !isNullOrEmptyOrUndifind(searchName) ? keywordSearch(searchName) : showData;
+                let table = `<table class="table table-sm table-hover mt-2"><thead><tr class="table-secondary"><th style="width:32%">名稱</th><th style="width:20%">類別</th><th>明細</th></tr></thead><tbody>`;
+                if (selected2 == "") {
+                    $.each(tableData, (index, val) => {
+                        table += `<tr><td>${val.Name}</td><td>${joinTable(val)}</td><td>${(val.Detial == undefined) || (val.Detial == "") ? "尚未有資料" : val.Detial}</td></tr>`;
+                    })
+                }
+                else {
+                    $.each(tableData, (index, val) => {
+                        table += selected2 == val.Category ? `<tr><td>${val.Name}</td><td>${joinTable(val)}</td><td>${(val.Detial == undefined) || (val.Detial == "") ? "尚未有資料" : val.Detial}</td></tr>` : "";
+                    })
+                }
+                table += `</tbody></table>`;
+                $("#show").html(table);
+            }
+        }
+
+        function joinTable(val) {
+            return selectData.find((item) => {
+                return item.ID == val.Category;
+            }).Name;
+        }
+
+        function isNullOrEmptyOrUndifind(val) {
+            return (val == "" || val == null || val == undefined) ? true : false;
+        }
+
+
+        // $("#btn").on("click", ()s => {
+        //     let arr = $("#txt").val().split(/\s/g)
+        //     let column1 = arr[0];
+        //     let column2 = arr[1];
+        //     let column3 = arr[2];
+        //     let column4 = arr[3];
+        //     let jsonString = "";
+        //     for (let i = 4; i < arr.length; i++) {
+        //         if (i % 3 == 1) {
+
+        //         }
+        //         switch (i % 4) {
+        //             case 0: { jsonString += `{"${column1}":"${arr[i]}",`; break; }
+        //             case 1: { jsonString += `"${column2}":"${arr[i]}",`; break; }
+        //             case 2: { jsonString += `"${column3}":"${arr[i]}",`; break; }
+        //             default: { jsonString += `"${column4}":"${arr[i]}"},`; break; }
+        //         }
+        //     }
+        //     $("#show").text(JSON.parse(JSON.stringify(jsonString.substring(0, jsonString.length - 1))));
+        // })
+        //show(data);
+        // function show(data) {
+        //     $("#show").text(JSON.stringify(data));
+        // }
+    </script>
+</body>
+
+</html>

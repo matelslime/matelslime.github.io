@@ -1,0 +1,1918 @@
+var jsonData = {
+  "CategoryList": {
+    "PlantList": [
+      {
+        "ID": "PH01",
+        "Name": "採集"
+      },
+      {
+        "ID": "PH02",
+        "Name": "種植"
+      }
+    ],
+    "AnimalList": [
+      {
+        "ID": "AC01",
+        "Name": "水生"
+      },
+      {
+        "ID": "AC02",
+        "Name": "陸生"
+      },
+      {
+        "ID": "AC03",
+        "Name": "兩棲"
+      }
+    ],
+    "IndustryList": [
+      {
+        "ID": "IC01",
+        "Name": "農林"
+      },
+      {
+        "ID": "IC02",
+        "Name": "漁牧"
+      },
+      {
+        "ID": "IC03",
+        "Name": "商"
+      },
+      {
+        "ID": "IC04",
+        "Name": "農林、漁牧、商"
+      },
+      {
+        "ID": "IC05",
+        "Name": "觀光"
+      },
+      {
+        "ID": "IC06",
+        "Name": "商、觀光"
+      }
+    ],
+    "BeliefList": [
+      {
+        "ID": "BC01",
+        "Name": "傳統信仰"
+      },
+      {
+        "ID": "BC02",
+        "Name": "基督教"
+      },
+      {
+        "ID": "BC03",
+        "Name": "道、佛教"
+      },
+      {
+        "ID": "BC04",
+        "Name": "神話"
+      }
+    ],
+    "UtilitiesList": [
+      {
+        "ID": "PUC01",
+        "Name": "交通"
+      },
+      {
+        "ID": "PUC02",
+        "Name": "文教"
+      },
+      {
+        "ID": "PUC03",
+        "Name": "行政"
+      },
+      {
+        "ID": "PUC04",
+        "Name": "防災"
+      },
+      {
+        "ID": "PUC05",
+        "Name": "遊憩"
+      },
+      {
+        "ID": "PUC06",
+        "Name": "工程"
+      }
+    ],
+    "OrganizeList": [
+      {
+        "ID": "OC01",
+        "Name": "社會團體組織"
+      },
+      {
+        "ID": "OC02",
+        "Name": "文化組織"
+      },
+      {
+        "ID": "OC03",
+        "Name": "自營業者"
+      },
+      {
+        "ID": "OC04",
+        "Name": "文教"
+      }
+    ],
+    "SkillList": [
+      {
+        "ID": "SC01",
+        "Name": "建築"
+      },
+      {
+        "ID": "SC02",
+        "Name": "工藝品"
+      }
+    ],
+    "DietList": [
+      {
+        "ID": "DC01",
+        "Name": "食用"
+      },
+      {
+        "ID": "DC02",
+        "Name": "飲品"
+      }
+    ],
+    "LanguageList": [
+      {
+        "ID": "LC01",
+        "Name": "族語教學"
+      },
+      {
+        "ID": "LC02",
+        "Name": "歌謠"
+      }
+    ]
+  },
+  "Plant": [
+    {
+      "ID": "P0001",
+      "Name": "麻竹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0002",
+      "Name": "桂竹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0003",
+      "Name": "刺竹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0004",
+      "Name": "月桃",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0005",
+      "Name": "飛機菜",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0006",
+      "Name": "野莧",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0007",
+      "Name": "無患子",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0008",
+      "Name": "茅草",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0009",
+      "Name": "紫背草",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0010",
+      "Name": "光果龍葵",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0011",
+      "Name": "昭和菜",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0012",
+      "Name": "過山香",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0013",
+      "Name": "苦苣菜",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0014",
+      "Name": "甲酸漿葉",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0015",
+      "Name": "大圓胡椒葉",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0016",
+      "Name": "山胡椒",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0017",
+      "Name": "辣椒",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0018",
+      "Name": "雞心小辣椒",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0019",
+      "Name": "雞母珠",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0020",
+      "Name": "艾納香",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0021",
+      "Name": "七里香",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0022",
+      "Name": "臭菊",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0023",
+      "Name": "兔兒菜",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0024",
+      "Name": "香附子",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0025",
+      "Name": "蒲公英",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0026",
+      "Name": "黃水茄",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0027",
+      "Name": "羊齒蕨聖蕨",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0028",
+      "Name": "梔子花",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0029",
+      "Name": "桑葚",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0030",
+      "Name": "香樟",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0031",
+      "Name": "台灣胡椒(圓葉胡椒)",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0032",
+      "Name": "七里香",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0033",
+      "Name": "山柚",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0034",
+      "Name": "羅式鹽膚木",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0035",
+      "Name": "青剛櫟",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0036",
+      "Name": "台灣朴樹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0037",
+      "Name": "土密樹/刺杜密",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0038",
+      "Name": "山桐子",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0039",
+      "Name": "血桐",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0040",
+      "Name": "檳榔",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0041",
+      "Name": "榕樹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0042",
+      "Name": "軟毛柿",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0043",
+      "Name": "林投",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0044",
+      "Name": "欒樹",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0045",
+      "Name": "蔓荊",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0046",
+      "Name": "靈芝",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0047",
+      "Name": "kusukaya香茅葉",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0048",
+      "Name": "vayaw",
+      "Category": "PH01",
+      "Detail": "可用來包cinavu、根部和泥土一起做牆壁@",
+      "Tag": []
+    },
+    {
+      "ID": "P0049",
+      "Name": "amud",
+      "Category": "PH01",
+      "Detail": "包蝸牛的cinavu@",
+      "Tag": []
+    },
+    {
+      "ID": "P0050",
+      "Name": "牧草",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0051",
+      "Name": "菸草",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0052",
+      "Name": "黃荊",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0053",
+      "Name": "九芎",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0054",
+      "Name": "qarenev",
+      "Category": "PH01",
+      "Detail": "治膿瘡@",
+      "Tag": []
+    },
+    {
+      "ID": "P0055",
+      "Name": "ljumai粺",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0056",
+      "Name": "魚藤",
+      "Category": "PH01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0057",
+      "Name": "小米",
+      "Category": "PH02",
+      "Detail": "*學名：Setaria italica (L.) Beauv.@*英名：Foxtail millet@*排灣族別名：Vaqu@<img src='Photo/mi.png' height='200px' style='float:right;margin-top:-85px;margin-right:10px'/>@為一年生草本植物，其具有耐旱、耐瘠、抗病蟲害、耐貯藏、生育期短的特性。小米的開花期為5-10月。@@適合在乾旱而缺乏灌溉的地區生長，臺灣海拔2,000公尺以下的山地都可栽培小米，台灣的小米主要栽種於山地部落，台東南迴等地區皆有栽種。@@是原住民重要的糧食作物，可供作煮飯、煮粥、釀酒、糕餅、點心等，其莖、稈、穀可當餵養家畜的飼料。@@除此之外，小米被原住民視為最神聖的作物，在宗教上具有獨特的重要性，所有的農耕儀式都與小米有關，尤其小米酒是慶典中不可缺少的祭品。@@一年四季流轉的節曆，均以小米為核心來計算。@@小米品種包含：糯小米、梗小米、ｘｘｘ、ｘｘｘ…",
+      "Tag": [
+        "A0031",
+        "A0032",
+        "I001",
+        "O016",
+        "O026",
+        "B004",
+        "I019",
+        "D001",
+        "D002",
+        "D009",
+        "D010",
+        "D014"
+      ]
+    },
+    {
+      "ID": "P0058",
+      "Name": "紅藜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0059",
+      "Name": "糯米",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0060",
+      "Name": "印加果",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0061",
+      "Name": "薑黃",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0062",
+      "Name": "薑紅",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0063",
+      "Name": "南瓜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0064",
+      "Name": "木鱉果",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0065",
+      "Name": "毛地瓜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0066",
+      "Name": "木瓜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0067",
+      "Name": "樹豆",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0068",
+      "Name": "刺蔥",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0069",
+      "Name": "芋頭",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0070",
+      "Name": "斷木香菇",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0071",
+      "Name": "五爪豆",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0072",
+      "Name": "菜豆",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0073",
+      "Name": "番茄",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0074",
+      "Name": "柿子",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0075",
+      "Name": "芭樂",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0076",
+      "Name": "芒果",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0077",
+      "Name": "香蕉",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0078",
+      "Name": "西瓜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0079",
+      "Name": "蕗蕎",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0080",
+      "Name": "佛手瓜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0081",
+      "Name": "毛豆",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0082",
+      "Name": "洛神",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0083",
+      "Name": "韭菜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0084",
+      "Name": "芥菜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0085",
+      "Name": "妹仔菜",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0086",
+      "Name": "花生",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0087",
+      "Name": "相思樹",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0088",
+      "Name": "白雞油／台灣光臘樹",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0089",
+      "Name": "橄欖",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0090",
+      "Name": "黃藤",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0091",
+      "Name": "水稻",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0092",
+      "Name": "ljavuan（豆類）",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0093",
+      "Name": "皇帝豆",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "P0094",
+      "Name": "nangyu山芋頭",
+      "Category": "PH02",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Animal": [
+    {
+      "ID": "A0001",
+      "Name": "semaning日本禿頭鯊魚苗",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0002",
+      "Name": "苦花",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0003",
+      "Name": "毛蟹",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0004",
+      "Name": "溪蝦",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0005",
+      "Name": "puliaw小魚",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0006",
+      "Name": "海龜",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0007",
+      "Name": "鯊魚",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0008",
+      "Name": "鯨魚",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0009",
+      "Name": "鰻魚",
+      "Category": "AC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0010",
+      "Name": "山豬",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0011",
+      "Name": "山羌",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0012",
+      "Name": "山羊",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0013",
+      "Name": "猴子",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0014",
+      "Name": "飛鼠",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0015",
+      "Name": "蜜袋鼯",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0016",
+      "Name": "家豬",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0017",
+      "Name": "穿山甲",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0018",
+      "Name": "松鼠",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0019",
+      "Name": "水鹿",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0020",
+      "Name": "大冠鳩",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0021",
+      "Name": "竹雞",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0022",
+      "Name": "熊鷹",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0023",
+      "Name": "百步蛇",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0024",
+      "Name": "非洲大蝸牛",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0025",
+      "Name": "台灣長蝸牛",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0026",
+      "Name": "蜜蜂",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0027",
+      "Name": "kavutje田鼠",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0028",
+      "Name": "野兔",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0029",
+      "Name": "螳螂",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0030",
+      "Name": "肉牛",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "A0031",
+      "Name": "麻雀",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "A0032",
+      "Name": "白腰文鳥",
+      "Category": "AC02",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    }
+  ],
+  "Industry": [
+    {
+      "ID": "I001",
+      "Name": "小米種植、販售",
+      "Category": "IC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "I002",
+      "Name": "植樹造林",
+      "Category": "IC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I003",
+      "Name": "禁伐補償",
+      "Category": "IC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I004",
+      "Name": "鰻魚",
+      "Category": "IC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I005",
+      "Name": "大鳥魚塭",
+      "Category": "IC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I006",
+      "Name": "肉牛養殖",
+      "Category": "IC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I007",
+      "Name": "齊納福",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I008",
+      "Name": "司秀英小吃店",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I009",
+      "Name": "郎叔麵店",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I010",
+      "Name": "豫隆商店",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I011",
+      "Name": "騰耀商行",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I012",
+      "Name": "明正商號",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I013",
+      "Name": "大鳥風情",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I014",
+      "Name": "芭札筏美食餐廳",
+      "Category": "IC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I015",
+      "Name": "村口燒烤",
+      "Category": "IC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I016",
+      "Name": "cinavu摩托車叫賣",
+      "Category": "IC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I017",
+      "Name": "大鳥布工坊",
+      "Category": "IC06",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I018",
+      "Name": "戈路",
+      "Category": "IC06",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I019",
+      "Name": "土坂社發kisatja實境解謎遊戲",
+      "Category": "IC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I020",
+      "Name": "金宿",
+      "Category": "IC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I021",
+      "Name": "大竹社發紅藜觀光遊程",
+      "Category": "IC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I022",
+      "Name": "不懂生活園區露營",
+      "Category": "IC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "I023",
+      "Name": "大鳥布工坊",
+      "Category": "IC05",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Belief": [
+    {
+      "ID": "B001",
+      "Name": "小米祭儀",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "B002",
+      "Name": "祭祀牲禮",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B003",
+      "Name": "生命祭儀",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B004",
+      "Name": "小米收穫祭",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "B005",
+      "Name": "五年祭",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B006",
+      "Name": "立巫",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B007",
+      "Name": "祖靈祭",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B008",
+      "Name": "婚禮",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B009",
+      "Name": "除喪",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B010",
+      "Name": "除穢",
+      "Category": "BC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B011",
+      "Name": "台坂長老教會",
+      "Category": "BC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B012",
+      "Name": "天主教土坂堂口",
+      "Category": "BC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B013",
+      "Name": "大鳥天主堂",
+      "Category": "BC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B014",
+      "Name": "紅眼睛Palji",
+      "Category": "BC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B015",
+      "Name": "吃孩子的大鳥",
+      "Category": "BC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B016",
+      "Name": "矮黑人傳說",
+      "Category": "BC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "B017",
+      "Name": "大洪水神話",
+      "Category": "BC04",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Utilities": [
+    {
+      "ID": "PU001",
+      "Name": "土坂吊橋",
+      "Category": "PUC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU002",
+      "Name": "南迴鐵路",
+      "Category": "PUC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU003",
+      "Name": "南迴公路",
+      "Category": "PUC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU004",
+      "Name": "土坂實驗小學",
+      "Category": "PUC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU005",
+      "Name": "方舟教室",
+      "Category": "PUC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU006",
+      "Name": "村辦公室",
+      "Category": "PUC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU007",
+      "Name": "活動中心",
+      "Category": "PUC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU008",
+      "Name": "集會所",
+      "Category": "PUC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU009",
+      "Name": "攔沙壩",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU010",
+      "Name": "滯洪池",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU011",
+      "Name": "明隧道",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU012",
+      "Name": "河堤(大鳥)",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU013",
+      "Name": "排水溝",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU014",
+      "Name": "大鳥永久屋",
+      "Category": "PUC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU015",
+      "Name": "土坂三角公園",
+      "Category": "PUC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU016",
+      "Name": "大鳥休息站",
+      "Category": "PUC05",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "PU017",
+      "Name": "大鳥聚會所",
+      "Category": "PUC05",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Organize": [
+    {
+      "ID": "O001",
+      "Name": "大竹社發",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O002",
+      "Name": "土坂社發",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O003",
+      "Name": "台坂社發",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O004",
+      "Name": "愛國蒲文健站",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O005",
+      "Name": "土坂文健站",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O006",
+      "Name": "台坂文健站",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O007",
+      "Name": "啦里吧文健站",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O008",
+      "Name": "南迴健康促進關懷服務協會",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O009",
+      "Name": "台坂社區發展協會",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O010",
+      "Name": "瑪拉拉彿史排灣文化藝術發展協會",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O011",
+      "Name": "該依腦文化發展協會",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O012",
+      "Name": "大鳥關懷據點",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O013",
+      "Name": "大鳥文健站",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O014",
+      "Name": "笆札筏文化發展協會",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O015",
+      "Name": "司降小巨蛋工作室",
+      "Category": "OC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O016",
+      "Name": "土坂古家宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O017",
+      "Name": "土坂陳家宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O018",
+      "Name": "土坂包家宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O019",
+      "Name": "啦里吧温家宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O020",
+      "Name": "台坂青年會",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O021",
+      "Name": "台坂瑪拉拉佛史宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O022",
+      "Name": "台坂瑪拉拉佛寺宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O023",
+      "Name": "台坂Gaingau宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O024",
+      "Name": "台坂Tjuavanaq宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O025",
+      "Name": "台坂Tjuamanges宗族領袖",
+      "Category": "OC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O026",
+      "Name": "野菜皇后",
+      "Category": "OC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O027",
+      "Name": "不懂休閒農場",
+      "Category": "OC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O028",
+      "Name": "金宿",
+      "Category": "OC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O029",
+      "Name": "sapari(撒巴里)文化工藝室",
+      "Category": "OC03",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O030",
+      "Name": "捌個零社會企業",
+      "Category": "OC03",
+      "Detail": "｢捌個零｣為排灣族語Paqeljing｢互助｣的意思，團隊皆為在地族人，亦為在地創造就業永續發展的契機，扶持並共好。@@捌個零社企結合了自然生態、農業生產，以永續、健康、安全、自然、環保、生態為經營理念，提供民眾無毒無害的食品安全。並有公益餐車服務，積極持續開發特色食材，除了常見的披薩食材之外，更運用在地各季當令時蔬，研發創新出獨有的南迴在地風味餐品。@@<iframe width='100%' height='400' src='https://www.youtube-nocookie.com/embed/7fCN3eQ2KWE' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>@*社群:&nbsp;<a href='http://paqeljing.easy.co/' target='_blank'><i class='bi bi-handbag-fill'></i></a>&nbsp;&nbsp;<a href='http://www.facebook.com/PAQELJING.SocialEnterprise' target='_blank'><i class='bi bi-facebook'></i></a>&nbsp;&nbsp;<a href='http://www.instagram.com/paqeljing.se/' target='_blank'><i class='bi bi-instagram'></i></a>@*學術資料:@<a href='http://www.nttu110038.ewang.com.tw/frontendGKE/' target='_blank'>循環經濟資料庫</a>、<a href='http://nttu110038.ewang.com.tw/frontendGKE/index.php?PK=0&MK=19&SK=81' target='_blank'>綠色知識經濟創新平台</a>、里山韌性指標",
+      "Tag": [
+        "P0057",
+        "P0058",
+        "P0068",
+        "A0026",
+        "I021"
+      ]
+    },
+    {
+      "ID": "O031",
+      "Name": "土坂實驗小學",
+      "Category": "OC04",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "O032",
+      "Name": "方舟教室",
+      "Category": "OC04",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Skill": [
+    {
+      "ID": "S001",
+      "Name": "taqetaq(涼台)",
+      "Category": "SC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S002",
+      "Name": "瞭望台",
+      "Category": "SC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S003",
+      "Name": "山芙蓉樹皮繩",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S004",
+      "Name": "皮雕",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S005",
+      "Name": "藤環",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S006",
+      "Name": "木雕",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S007",
+      "Name": "陶壺",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S008",
+      "Name": "菸斗",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S009",
+      "Name": "蓆子",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S010",
+      "Name": "背袋",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S011",
+      "Name": "農用籃",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S012",
+      "Name": "金屬手環",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S013",
+      "Name": "刺繡",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "S014",
+      "Name": "花環",
+      "Category": "SC02",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Diet": [
+    {
+      "ID": "D001",
+      "Name": "小米粽",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "D002",
+      "Name": "小米湯圓",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "D003",
+      "Name": "吉拿夫",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D004",
+      "Name": "紅藜地瓜飯",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D005",
+      "Name": "山羌料理",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D006",
+      "Name": "蒸飯、囉唆飯",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D007",
+      "Name": "搖搖飯",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D008",
+      "Name": "avai",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D009",
+      "Name": "cinavu",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "D010",
+      "Name": "inali（大鳥）",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "D011",
+      "Name": "蒸煮根莖類（大鳥）",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D012",
+      "Name": "辣椒水",
+      "Category": "DC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D013",
+      "Name": "紅藜團地瓜湯",
+      "Category": "DC02",
+      "Detail": "",
+      "Tag": []
+    },
+    {
+      "ID": "D014",
+      "Name": "小米酒",
+      "Category": "DC02",
+      "Detail": "",
+      "Tag": [
+        "P0057"
+      ]
+    },
+    {
+      "ID": "D015",
+      "Name": "binilaw",
+      "Category": "DC01",
+      "Detail": "",
+      "Tag": []
+    }
+  ],
+  "Language": [
+    {
+      "ID": "",
+      "Name": "",
+      "Category": "",
+      "Detail": "",
+      "Tag": [""]
+    }
+  ]
+}

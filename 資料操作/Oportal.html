@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap-5.1.1-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="icons-1.9.1/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            list-style: none;
+        }
+
+        .bg {
+            background: url("Photo/dfd.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        #page1 {
+            overflow: hidden
+        }
+
+        .disappear {
+            display: none;
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        i {
+            font-style:normal;
+        }
+
+        .row>div>i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .sideMenu {
+            float: left;
+            width: 270px;
+            height: 100%;
+            background-color: cadetblue;
+            padding: 50px 0;
+            transform: translateX(-95%);
+            transition: 0.3s;
+        }
+
+        .sideMenu:hover {
+            transform: translateX(0);
+        }
+
+        .sideNav label {
+            display: block;
+            color: #fff;
+            padding: 20px 0px 20px 40px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        label .fas {
+            margin-right: -1.3em;
+            transform: scale(0);
+            transition: 0.25s;
+        }
+
+        label:hover .fas {
+            margin-right: -0.5em;
+            transform: scale(1);
+        }
+
+        input[type="checkbox"]+ul>li>label .fas {
+            margin-right: -2.5em;
+            transform: scale(0);
+            transition: 0.25s;
+        }
+
+        input[type="checkbox"]+ul>li>label:hover .fas {
+            margin-right: -1.8em;
+            transform: scale(1);
+        }
+
+        li>ul {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked+ul {
+            display: block;
+        }
+
+        .sideNav>li>label::before {
+            content: "﹀";
+            position: absolute;
+            color: #fff;
+            right: 50px;
+            top: 23px;
+            font-weight: bolder;
+        }
+
+        .sideNav>li>label::before {
+            content: "﹀";
+            position: absolute;
+            color: #fff;
+            right: 50px;
+            top: 23px;
+            font-weight: bolder;
+        }
+
+        #page2>.vh-100 {
+            overflow-y: overlay;
+        }
+
+        /* 整個捲軸  */
+        #page2>.vh-100::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* 捲軸的軌道 */
+        #page2>.vh-100::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        /* 捲軸尚未滑到的軌道 */
+        #page2>.vh-100::-webkit-scrollbar-track-piece {
+            background: #fff;
+        }
+
+        /* 滑動的區塊  */
+        #page2>.vh-100::-webkit-scrollbar-thumb {
+            background: rgba(108, 108, 108, 0.783);
+            border-radius: 7px;
+        }
+    </style>
+</head>
+
+<body class="bg h-100">
+    <div id="page1">
+        <div class="bg-light bg-opacity-75">
+            <nav class="container navbar navbar-light nav-fill ps-1 pe-1">
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="P">Plant</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="A">Animal</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="I">Industry</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="B">Belief</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="U">Utilities</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="O">Organize</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="S">Skill</span>
+                <span class="nav-link btn btn-outline-primary ms-1 me-1" id="D">Diet</span>
+            </nav>
+        </div>
+        <div class="row mt-3">
+            <div class="col-6"></div>
+            <div class="col-1">
+                <i class="bi bi-stars"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-1">
+                <i class="bi bi-building"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7"></div>
+            <div class="col-1">
+                <i class="bi bi-diagram-3"></i>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-1">
+                <i class="bi bi-tree"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-1">
+                <i class="bi bi-egg-fried"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div><i class="bi bi-tree" style="opacity:0; pointer-events: none;"></i></div>
+        </div>
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-1">
+                <i class="bi bi-tools"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-1">
+                <i class="bi bi-minecart-loaded"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-1">
+                <i class="bi bi-bug"></i>
+            </div>
+        </div>
+    </div>
+    <div id="page2" class="disappear">
+        <div style="float:right; margin-right:20px;">
+            <i class="bi bi-house-door-fill" style="color:black; font-size:2.5rem;"></i>
+        </div>
+        <div class="sideMenu vh-100">
+            <ul class="sideNav">
+                <li>
+                    <label for="DC01" class="text-truncate"><i class="fas"></i>社會團體組織（社區協會、文健站）</label>
+                    <input type="checkbox" id="DC01">
+                    <ul>
+                        <li><label><i class="fas" id="D001"></i>小米粽</label></li>
+                        <li><label><i class="fas" id="D002"></i>小米湯圓</label></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="w-100 h-100">
+            <div id="header" class="vw-100 pt-5 pb-3 text-center">
+                <span id="title" class="display-3" style="margin-left:-13%;">這是標題</span>
+            </div>
+            <div id="body" class="vw-100 pt-4 pb-4">
+                <div id="content" class="w-60 m-auto alert-warning" style="height: 25rem">
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                    <span class="h3" style="margin-left:1.5%;">這是內容這是內容這是內容這是內容這是內容這是內容這是內容</span><br>
+                </div>
+            </div>
+            <div id="footer" class="alert-danger"><div class="w-60 m-auto"><i class="badge rounded-pill text-primary border border-primary border-2 m-1">這是tag</i><i class="badge rounded-pill text-primary border border-primary border-2 m-1">這是tag</i><i class="badge rounded-pill text-primary border border-primary border-2 m-1">這是tag</i></div></div>
+        </div>
+    </div>
+    <script src="bootstrap-5.1.1-dist/js/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script>
+        console.log($("#fg").height());
+        const data = JSON.parse(JSON.stringify(jsonData));
+        var showData;
+        $(".bi, .btn-outline-primary").on("click", ($event) => {
+            let options = "";
+            let selectData;
+            switch ($event.target.classList[1]) {
+                case "bi-tree": { showData = data.Plant; selectData = data.CategoryList.PlantList; break; }
+                case "bi-bug": { showData = data.Animal; selectData = data.CategoryList.AnimalList; break; }
+                case "bi-minecart-loaded": { showData = data.Industry; selectData = data.CategoryList.IndustryList; break; }
+                case "bi-stars": { showData = data.Belief; selectData = data.CategoryList.BeliefList; break; }
+                case "bi-building": { showData = data.Utilities; selectData = data.CategoryList.UtilitiesList; break; }
+                case "bi-diagram-3": { showData = data.Organize; selectData = data.CategoryList.OrganizeList; break; }
+                case "bi-tools": { showData = data.Skill; selectData = data.CategoryList.SkillList; break; }
+                default: { showData = data.Diet; selectData = data.CategoryList.DietList; break; }
+            }
+
+            // $("#page2").html(`<div style="float:right; margin-right:20px;"><i class="bi bi-house-door-fill" style="color:black; font-size:2.5rem;"></i></div><div class="sideMenu vh-100"><ul class="sideNav"></ul></div>`);
+            // $.each(selectData, (index, value) => {
+            //     options += `<li><label for="${value.ID}"><i class="fas"></i>${value.Name}</label><input type="checkbox" id="${value.ID}" /><ul>`
+            //     $.each(showData, (index, value2) => {
+            //         if (value2.Category == value.ID) {
+            //             options += `<li><label><i class="fas" id="${value2.ID}"></i>${value2.Name}</label></li>`;
+            //         }
+            //     });
+            //     options += `</ul></li>`;
+            // });
+            // $(".sideNav").html(options);
+
+            switchScene();
+
+            $(".bi-house-door-fill").on("click", () => {
+                switchScene();
+            })
+        })
+
+        $(".bi, .btn-outline-primary").on("mouseover mouseout", ($event) => {
+            let selecter;
+            let selecter2;
+            if ($event.target.localName == "i") {
+                switch ($event.target.classList[1]) {
+                    case "bi-tree": { selecter = "#P"; break; }
+                    case "bi-bug": { selecter = "#A"; break; }
+                    case "bi-minecart-loaded": { selecter = "#I"; break; }
+                    case "bi-stars": { selecter = "#B"; break; }
+                    case "bi-building": { selecter = "#U"; break; }
+                    case "bi-diagram-3": { selecter = "#O"; break; }
+                    case "bi-tools": { selecter = "#S"; break; }
+                    default: { selecter = "#D"; break; }
+                }
+                selecter2 = "." + $event.target.classList[1];
+            }
+            else {
+                selecter = "#" + $event.target.id;
+                switch ($event.target.id) {
+                    case "P": { selecter2 = ".bi-tree"; break; }
+                    case "A": { selecter2 = ".bi-bug"; break; }
+                    case "I": { selecter2 = ".bi-minecart-loaded"; break; }
+                    case "B": { selecter2 = ".bi-stars"; break; }
+                    case "U": { selecter2 = ".bi-building"; break; }
+                    case "O": { selecter2 = ".bi-diagram-3"; break; }
+                    case "S": { selecter2 = ".bi-tools"; break; }
+                    default: { selecter2 = ".bi-egg-fried"; break; }
+                }
+            }
+
+            if ($event.target.classList[1] != "bi-house-door-fill") {
+                $(selecter).css("background-color", $event.type == "mouseover" ? "#0d6efd" : "transparent");
+                $(selecter2).css("color", $event.type == "mouseover" ? "greenyellow" : "white");
+            }
+        })
+
+        function switchScene() {
+            $("#page1, #page2").toggleClass("disappear");
+            $("body").toggleClass("bg");
+        }
+
+    </script>
+</body>
+
+</html>
