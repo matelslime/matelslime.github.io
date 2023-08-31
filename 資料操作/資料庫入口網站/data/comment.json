@@ -1,0 +1,36 @@
+var commentData =  {
+    "P0057": [
+        {
+            "ID": "BUL1",
+            "Author": "陳平偉",
+            "District": "台坂",
+            "Detail": "大家加油",
+            "Time": "Tue Nov 18 2022 17:12:06 GMT+0800",
+            "Block": false
+        },
+        {
+            "ID": "BUL2",
+            "Author": "Yee",
+            "District": "其他",
+            "Detail": "大家都是一家人",
+            "Time": "Tue Nov 20 2022 17:12:06 GMT+0800",
+            "Block": true
+        },
+        {
+            "ID": "BUL3",
+            "Author": "阿岳",
+            "District": "土坂",
+            "Detail": "我覺得很棒。",
+            "Time": "Tue Nov 21 2022 17:12:06 GMT+0800",
+            "Block": false
+        },
+        {
+            "ID": "BUL4",
+            "Author": "德榮",
+            "District": "土坂",
+            "Detail": "阿傑真的很寬容。",
+            "Time": "Tue Nov 22 2022 17:12:06 GMT+0800",
+            "Block": false
+        }
+    ]
+}
